@@ -6,19 +6,19 @@ plugins {
 	id("org.sonarqube") version "4.4.1.3373"
 }
 
-group = "id.ac.ui.cs.advprog"
-version = "0.0.1-SNAPSHOT"
-
-java {
-	sourceCompatibility = JavaVersion.VERSION_21
-}
-
 sonar {
 	properties {
 		property("sonar.projectKey", "DarilRaf_adpro-w02")
 		property("sonar.organization", "darilraf")
 		property("sonar.host.url", "https://sonarcloud.io")
 	}
+}
+
+group = "id.ac.ui.cs.advprog"
+version = "0.0.1-SNAPSHOT"
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
 }
 
 configurations {
