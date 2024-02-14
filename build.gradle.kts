@@ -88,3 +88,4 @@ tasks.jacocoTestReport {
 		html.required = true
 	}
 }
+
