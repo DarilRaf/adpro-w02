@@ -57,4 +57,4 @@ jobs:
             -Dsonar.java.binaries=.
             -Dsonar.sources=src/main/java
             -Dsonar.tests=src/test/java
-            -Dsonar.coverage.jacoco.htmlReportPaths=build/reports/jacoco/html/index.html
+            -Dsonar.coverage.jacoco.htmlReportPaths=build/reports/jacoco/test/html/index.html
