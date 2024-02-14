@@ -62,4 +62,25 @@ class ProductRepositoryTest {
         assertEquals(product2.getProductId(), savedProduct.getProductId());
         assertFalse(productIterator.hasNext());
     }
+
+    @Test
+    void testDeleteProductById() {
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        productRepository.create(product);
+
+        productRepository.deleteById("eb558e9f-1c39-460e-8860-71af6af63bd6");
+
+        assertNull(productRepository.getProduct("eb558e9f-1c39-460e-8860-71af6af63bd6"));
+    }
+
+    @Test
+    void testGetProductById() {
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        productRepository.create(product);
+
+        assertEquals(product, productRepository.getProduct("eb558e9f-1c39-460e-8860-71af6af63bd6"));
+        assertNull(productRepository.getProduct("non-existing-id"));
+    }
 }
