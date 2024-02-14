@@ -17,3 +17,5 @@ From those 3 workflows, I think it has covered most of the CI/CD principle, such
 integration that I had on ci.yml makes sure that the code has run through some re-building so it makes sure nothing
 is getting out of the way. On the other hand Koyeb workflow is used so it could automatically deploy my application
 to the koyeb service, so I won't have to do it manually.
+
+koyeb web link: https://implicit-merissa-darilraf.koyeb.app/
