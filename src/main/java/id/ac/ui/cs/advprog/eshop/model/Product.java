@@ -10,7 +10,7 @@ public class Product {
     private int productQuantity;
     static int staticId;
 
-    static public String setNewId() {
+    public static String setNewId() {
         staticId++;
         return Integer.toString(staticId);
     }
