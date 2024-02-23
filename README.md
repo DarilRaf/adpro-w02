@@ -9,7 +9,6 @@ I fixed it by simple removing it from my codebase
 
 Same as before, it also reminded me on some commented out codes that are in some files. I proceed to remove it from the codebase to make it look cleaner.
 
-
 2. Look at your CI/CD workflows (GitHub)/pipelines (GitLab). Do you think the current implementation has met the definition of Continuous Integration and Continuous Deployment? Explain the reasons (minimum 3 sentences)!
 
 I've added 3 workflows in total: CI, SonarCloud, and Koyeb.
@@ -18,4 +17,4 @@ integration that I had on ci.yml makes sure that the code has run through some r
 is getting out of the way. On the other hand Koyeb workflow is used so it could automatically deploy my application
 to the koyeb service, so I won't have to do it manually.
 
-link for koyeb
+koyeb web link: https://implicit-merissa-darilraf.koyeb.app/
