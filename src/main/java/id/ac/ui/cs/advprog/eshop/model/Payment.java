@@ -2,8 +2,8 @@ package id.ac.ui.cs.advprog.eshop.model;
 
 import java.util.Map;
 
+import id.ac.ui.cs.advprog.eshop.enums.PaymentMethod;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class Payment {
@@ -13,7 +13,7 @@ public class Payment {
     Map<String, String> paymentData;
 
     public Payment(String id, String method, String status, Map<String, String> paymentData) {
-        if (!method.equals("VOUCHER") && !method.equals("BANK")) {
+        if (!PaymentMethod.contains(method)) {
             throw new IllegalArgumentException();
         }
         this.id = id;
