@@ -50,3 +50,11 @@ koyeb web link: https://implicit-merissa-darilraf.koyeb.app/
 
 3. Disadvantages of not applying SOLID principles
    Not applying SOLID principles can lead to code that is rigid, fragile, immobile, and viscous. For example, without the Single Responsibility Principle, a class might handle multiple tasks, making it hard to modify one functionality without affecting others. Ignoring the Open/Closed Principle might result in frequent modifications to existing code for any new feature, increasing the risk of bugs. Overlooking Liskov Substitution could lead to runtime errors if subclasses don't properly fit into the places their base classes are expected to. Neglecting Interface Segregation and Dependency Inversion can cause unnecessary dependencies, making the system harder to understand, extend, or refactor.
+
+=============== Module 4 ==================
+
+<h3> Reflection </h3>
+
+1. For me, the TDD flow implementation is useful enough for my coding performance, since it gave me a well-structured flow to follow, from RED, GREEN, to REFACTOR that each has it's own purpose and usage. So, everytime I code, I could follow this implementation so I wouldn't waste more time on deciding which one should I develop more than the other.
+
+2. For most of the tests that I implemented, I've already followed the F.I.R.S.T. principle and it made the code looks more modular and clean, reducing any boilerplate that could shown up
