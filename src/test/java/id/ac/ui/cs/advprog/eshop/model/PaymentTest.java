@@ -71,6 +71,6 @@ public class PaymentTest {
         Map<String, String> paymentData = new HashMap<>();
         paymentData.put("voucherCode", "ESHOP1234ABCD5678");
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b", "VOUCHER", "REJECTED", paymentData);
-        assertThrows(IllegalArgumentException.class, () -> payment.setStatus("HEHE"));
+        assertThrows(IllegalArgumentException.class, () -> payment.setStatus("HEHEH"));
     }
 }
