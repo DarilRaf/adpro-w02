@@ -79,6 +79,7 @@ class PaymentServiceTest {
     void testVoucherCodePaymentSuccess() {
         Map<String, String> paymentData = new HashMap<>();
         paymentData.put("voucherCode", "ESHOP1234ABC5678"); // Valid voucher code
+        when(paymentRepository.save(any(Payment.class))).thenAnswer(invocation -> invocation.getArgument(0));
         Payment payment = paymentService.addPayment(order, "VOUCHER", paymentData);
         
         assertEquals("SUCCESS", payment.getStatus());
@@ -88,6 +89,7 @@ class PaymentServiceTest {
     void testVoucherCodePaymentRejected() {
         Map<String, String> paymentData = new HashMap<>();
         paymentData.put("voucherCode", "INVALIDCODE"); // Invalid voucher code
+        when(paymentRepository.save(any(Payment.class))).thenAnswer(invocation -> invocation.getArgument(0));
         Payment payment = paymentService.addPayment(order, "VOUCHER", paymentData);
 
         assertEquals("REJECTED", payment.getStatus());
