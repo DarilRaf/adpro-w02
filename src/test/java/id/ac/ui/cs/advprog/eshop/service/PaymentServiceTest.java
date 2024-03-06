@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ import id.ac.ui.cs.advprog.eshop.repository.PaymentRepository;
 
 class PaymentServiceTest {
     @InjectMocks
-    PaymentService paymentService;
+    PaymentServiceImpl paymentService;
     @Mock
     PaymentRepository paymentRepository;
     Payment payment;
@@ -29,7 +30,9 @@ class PaymentServiceTest {
 
     @BeforeEach
     void setUp() {
+        MockitoAnnotations.openMocks(this);
         paymentRepository = mock(PaymentRepository.class);
+        paymentService = new PaymentServiceImpl(paymentRepository);
         List<Product> products = new ArrayList<>();
         Product product = new Product();
         product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
@@ -95,6 +98,9 @@ class PaymentServiceTest {
         Map<String, String> paymentData = new HashMap<>();
         paymentData.put("bankName", "Bank XYZ");
         paymentData.put("referenceCode", "REF123456");
+
+        when(paymentRepository.save(any(Payment.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
         Payment payment = paymentService.addPayment(order, "BANK", paymentData);
 
         assertEquals("SUCCESS", payment.getStatus());
@@ -105,6 +111,7 @@ class PaymentServiceTest {
         Map<String, String> paymentData = new HashMap<>();
         paymentData.put("bankName", "");
         paymentData.put("referenceNumber", "REF123456");
+        when(paymentRepository.save(any(Payment.class))).thenAnswer(invocation -> invocation.getArgument(0));
         Payment payment = paymentService.addPayment(order, "BANK", paymentData);
         
         assertEquals("REJECTED", payment.getStatus());
